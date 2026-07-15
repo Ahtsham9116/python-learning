@@ -49,9 +49,6 @@ class Game:
     def reset(self):
         self.__random_number = random.randint(1, self.__difficulty_level_range)
         self.__attempts = 0
-        
-    def get_attempts(self):
-        return self.__attempts
     
     def set_difficulty_level(self, level):
         levels = {
