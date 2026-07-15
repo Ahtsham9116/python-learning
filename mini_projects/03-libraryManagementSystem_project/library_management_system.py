@@ -15,21 +15,21 @@ class Book:
         self.book_id = book_id
         self.title = title
         self.author = author
-        self.total_copies = total_copies
-        self.borrowed_copies = 0
-        self.available_copies = total_copies
+        self.__total_copies = total_copies
+        self.__borrowed_copies = 0
+        self.__available_copies = total_copies
 
     def borrow(self):
-        if self.available_copies > 0:
-            self.borrowed_copies += 1
-            self.available_copies -= 1
+        if self.__available_copies > 0:
+            self.__borrowed_copies += 1
+            self.__available_copies -= 1
             return True
         return False
 
     def return_copy(self):
-        if self.borrowed_copies > 0:
-            self.borrowed_copies -= 1
-            self.available_copies += 1
+        if self.__borrowed_copies > 0:
+            self.__borrowed_copies -= 1
+            self.__available_copies += 1
             return True
         return False
 
@@ -37,9 +37,9 @@ class Book:
         print(f"\tID: {self.book_id}")
         print(f"\tTitle: {self.title}")
         print(f"\tAuthor: {self.author}")
-        print(f"\tTotal Copies: {self.total_copies}")
-        print(f"\tBorrowed Copies: {self.borrowed_copies}")
-        print(f"\tAvailable Copies: {self.available_copies}")
+        print(f"\tTotal Copies: {self.__total_copies}")
+        print(f"\tBorrowed Copies: {self.__borrowed_copies}")
+        print(f"\tAvailable Copies: {self.__available_copies}")
 
 
 class Library:
